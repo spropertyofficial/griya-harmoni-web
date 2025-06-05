@@ -16,7 +16,7 @@ const GOOGLE_SCRIPT_URL = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
 
 export default function ContactAgentForm({
   propertyName = "properti ini",
-  agentWhatsappNumber = "6285123123891",
+  agentWhatsappNumber = "62811286885",
   formTitle = `Tertarik dengan Property Ini?`,
   formSubtitle = "Kirim pesan untuk info lebih lanjut atau jadwal kunjungan.",
   submitButtonText = "Hubungi Kami",

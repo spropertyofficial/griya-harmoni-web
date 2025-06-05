@@ -279,7 +279,6 @@ export default function SinglePropertyDetailPage() {
               <div className="bg-white p-6 rounded-xl shadow-xl sticky top-20 mt-10">
                 <ContactAgentForm
                   propertyName={property.name}
-                  agentWhatsappNumber={property.agent?.phone || "6281234567890"} // Ganti dengan nomor WA yang benar
                   formTitle={`Tertarik Unit Ini?`} // Judul ini bisa diubah jika mau
                   formSubtitle="Hubungi agen kami untuk info lebih lanjut atau jadwal survei." // Subjudul disesuaikan
                 />
