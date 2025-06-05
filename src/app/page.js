@@ -193,12 +193,12 @@ export default function HomePage() {
                   )}
                 </div>
 
-                <div className="mt-auto">
+                <div className="mt-auto text-center md:text-left">
                   {" "}
                   {/* Mendorong tombol ke bawah jika ada space */}
                   <Link
                     href="/tipe-rumah" // Ini mengarah ke halaman detail unit tunggal
-                    className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg text-md sm:text-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                    className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg text-md sm:text-lg shadow-md hover:shadow-lg w-full md:w-fit transition-all duration-300 transform hover:scale-105"
                   >
                     Lihat Detail Unit
                   </Link>
