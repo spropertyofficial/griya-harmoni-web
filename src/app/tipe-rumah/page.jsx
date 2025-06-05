@@ -19,6 +19,7 @@ import { notFound } from "next/navigation";
 
 import PropertyImageGallery from "@/components/common/PropertyImageGallery";
 import ContactAgentForm from "@/components/forms/ContactAgentForm";
+import { formatPrice } from "@/utils/formatPrice";
 
 const property = getProperty();
 
@@ -228,27 +229,24 @@ export default function SinglePropertyDetailPage() {
               {/* Kartu Harga & Spesifikasi Kunci */}
               <div className="bg-white p-6 rounded-xl shadow-xl">
                 <div className="mb-5 pb-4 border-b border-gray-200">
-                  <p className="text-sm text-gray-500 mb-1">
+                  {/* <p className="text-sm text-gray-500 mb-1">
                     {property.priceQualifier
                       ? `${
                           property.priceQualifier.charAt(0).toUpperCase() +
                           property.priceQualifier.slice(1)
                         } Harga`
                       : "Harga Unit"}
-                  </p>
+                  </p> */}
+                  <p className="text-sm text-gray-500 mb-1">Harga mulai dari</p>
                   <p className="text-3xl md:text-4xl font-extrabold text-orange-600">
-                    {new Intl.NumberFormat("id-ID", {
-                      style: "currency",
-                      currency: "IDR",
-                      minimumFractionDigits: 0,
-                    }).format(property.price)}
+                    {formatPrice(property.price)}
                     {property.priceType && (
                       <span className="text-base font-medium text-gray-600 ml-1">
                         {property.priceType}
                       </span>
                     )}
                   </p>
-                  {property.priceQualifier === "mulai" && (
+                  {property.priceQualifier === "Harga" && (
                     <p className="text-xs text-gray-500 mt-1">
                       (*Harga dapat berubah)
                     </p>
