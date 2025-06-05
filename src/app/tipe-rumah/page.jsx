@@ -220,13 +220,14 @@ export default function SinglePropertyDetailPage() {
                 </section>
               )}
             </div>
-
             {/* Kolom Kanan: Sidebar Harga & Kontak Agen */}
-            <aside className="lg:col-span-1">
-              <div className="bg-white p-6 rounded-xl shadow-2xl sticky top-24">
-                {" "}
-                {/* top-24 agar ada jarak dari navbar sticky */}
-                <div className="mb-6 pb-4 border-b border-gray-200">
+            <aside className="lg:col-span-1 h-full">
+              {/* Kontainer untuk membuat elemen di dalamnya sticky */}
+
+              {/* top-24 untuk jarak dari navbar, space-y-6 untuk jarak antar kartu di sidebar */}
+              {/* Kartu Harga & Spesifikasi Kunci */}
+              <div className="bg-white p-6 rounded-xl shadow-xl">
+                <div className="mb-5 pb-4 border-b border-gray-200">
                   <p className="text-sm text-gray-500 mb-1">
                     {property.priceQualifier
                       ? `${
@@ -253,8 +254,10 @@ export default function SinglePropertyDetailPage() {
                     </p>
                   )}
                 </div>
-                {/* Rangkuman Spesifikasi Kunci */}
-                <div className="mb-6 space-y-2">
+
+                <div className="space-y-2.5">
+                  {" "}
+                  {/* Sedikit penyesuaian spasi */}
                   <h3 className="text-md font-semibold text-slate-700 mb-2">
                     Ringkasan Spesifikasi:
                   </h3>
@@ -271,11 +274,14 @@ export default function SinglePropertyDetailPage() {
                     </div>
                   ))}
                 </div>
+              </div>
+              {/* Kartu Form Kontak Agen */}
+              <div className="bg-white p-6 rounded-xl shadow-xl sticky top-20 mt-10">
                 <ContactAgentForm
                   propertyName={property.name}
                   agentWhatsappNumber={property.agent?.phone || "6281234567890"} // Ganti dengan nomor WA yang benar
-                  formTitle={`Tertarik Unit Ini?`}
-                  formSubtitle="Hubungi agen kami sekarang!"
+                  formTitle={`Tertarik Unit Ini?`} // Judul ini bisa diubah jika mau
+                  formSubtitle="Hubungi agen kami untuk info lebih lanjut atau jadwal survei." // Subjudul disesuaikan
                 />
               </div>
             </aside>
