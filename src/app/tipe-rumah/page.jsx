@@ -45,7 +45,7 @@ export default function SinglePropertyDetailPage() {
       ? [property.image]
       : ["/placeholder-image.jpg"];
 
-  const pageTopPadding = "pt-24 md:pt-28";
+  const pageTopPadding = "pt-12";
 
   // Rangkuman spesifikasi kunci untuk sidebar (sesuai brosur)
   const keySpecs = [
