@@ -1,121 +1,62 @@
-// src/data/mockProperties.js
-export const allProperties = [
-  {
-    id: 1,
-    name: "Tipe Azalea (60/72)",
-    slug: "azalea", // Hanya slug, bukan path lengkap lagi
-    image: "https://picsum.photos/800/600",
-    images: [
-      // Contoh array gambar untuk galeri
-      "https://picsum.photos/800/600?random=1",
-      "https://picsum.photos/800/600?random=2",
-      "https://picsum.photos/800/600?random=3",
-    ],
-    status: "For Sale",
-    location: "Cisoka, Tangerang Selatan",
-    bedrooms: 2,
-    bathrooms: 1,
-    area: 60,
-    landArea: 72,
-    price: 350000000,
-    priceType: "",
-    rating: 4.5,
-    description:
-      "Hunian nyaman dengan 2 kamar tidur, desain modern minimalis yang memaksimalkan ruang. Cocok untuk keluarga muda yang dinamis dan mencari kenyamanan dalam lingkungan yang asri.",
-    features: [
-      "Carport 1 Mobil",
-      "Taman Depan",
-      "Dapur Modern",
-      "Listrik 1300W",
-      "Air Bersih PDAM",
-    ], // BARU
-  },
-  {
-    id: 2,
-    name: "Tipe Bougenville (70/90)",
-    slug: "bougenville",
-    image: "https://picsum.photos/800/600?random=4",
-    images: [
-      "https://picsum.photos/800/600?random=5",
-      "https://picsum.photos/800/600?random=6",
-      "https://picsum.photos/800/600?random=7",
-    ],
-    status: "For Sale",
-    location: "Dekat Pusat Kota Strategis",
-    bedrooms: 3,
-    bathrooms: 2,
-    area: 70,
-    landArea: 90,
-    price: 450000000,
-    priceType: "",
-    rating: 4.8,
-    description:
-      "Ruang lebih luas dengan 3 kamar tidur yang lega, memberikan kenyamanan ekstra untuk seluruh anggota keluarga. Nikmati kualitas hidup lebih baik dengan fasilitas lengkap.",
-    features: [
-      "Carport 2 Mobil",
-      "Taman Depan & Belakang",
-      "Ruang Tamu Luas",
-      "Listrik 2200W",
-    ],
-  },
-  {
-    id: 3,
-    name: "Tipe Cattleya (85/120)",
-    slug: "cattleya",
-    image: "https://picsum.photos/800/600?random=8",
-    images: [
-      "https://picsum.photos/800/600?random=9",
-      "https://picsum.photos/800/600?random=10",
-      "https://picsum.photos/800/600?random=11",
-    ],
-    status: "Sold Out",
-    location: "Area Premium, Cluster Eksklusif",
-    bedrooms: 3,
-    bathrooms: 2,
-    area: 85,
-    landArea: 120,
-    price: 600000000,
-    priceType: "",
-    rating: 4.9,
-    description:
-      "Pilihan premium dengan desain arsitektur elegan dan material berkualitas tinggi. Dilengkapi 3 kamar tidur, ruang keluarga yang mewah, dan lingkungan yang aman.",
-    features: [
-      "Carport 2 Mobil (Covered)",
-      "Smart Home System",
-      "Private Garden",
-      "One Gate System Security 24 Jam",
-    ],
-  },
-  {
-    id: 4,
-    name: "Tipe Dahlia (50/60)",
-    slug: "dahlia",
-    image: "https://picsum.photos/800/600?random=12",
-    images: [
-      "https://picsum.photos/800/600?random=13",
-      "https://picsum.photos/800/600?random=14",
-    ],
-    status: "New Launch",
-    location: "Kawasan Berkembang Pesat",
-    bedrooms: 2,
-    bathrooms: 1,
-    area: 50,
-    landArea: 60,
-    price: 290000000,
-    priceType: "",
-    rating: 4.3,
-    description:
-      "Solusi hunian minimalis modern yang efisien dan terjangkau. Ideal untuk pasangan baru atau sebagai investasi properti yang menjanjikan di masa depan.",
-    features: ["Desain Compact", "Harga Terjangkau", "Lingkungan Nyaman"],
-  },
-  // Tambahkan lebih banyak data properti jika perlu
-];
+export const unit = {
+  id: 1,
+  slug: "unit-subsidi-29-60",
+  name: "Tipe 29/60",
+  image: "https://picsum.photos/800/600?random=1",
+  images: [
+    "https://picsum.photos/800/600?random=2",
+    "https://picsum.photos/800/600?random=3",
+    "https://picsum.photos/800/600?random=4",
+    "https://picsum.photos/800/600?random=5",
+    "https://picsum.photos/800/600?random=6",
+    "https://picsum.photos/800/600?random=7",
+    "https://picsum.photos/800/600?random=8",
+    "https://picsum.photos/800/600?random=9",
+    "https://picsum.photos/800/600?random=10",
+  ],
+  floorPlanImage:
+    "https://griyaharmoni.com/wp-content/uploads/2024/01/floorplan-Griya-harmoni-copy-1028x1536.jpg",
+  status: "For Sale",
+  location: "Cisoka, Kab. Tangerang",
+  fullAddress:
+    "Griya Harmoni Cibugel, Jl. Specht Hubarok, Bojongloa, Kec. Cisoka, Kabupaten Tangerang, Banten 15730 (Dekat PCX8+R36)",
 
-// Anda bisa membuat fungsi untuk mengambil semua properti atau berdasarkan slug
-export function getAllProperties() {
-  return allProperties;
-}
+  description:
+    "Wujudkan impian hunian idaman Anda di Griya Harmoni Cibugel. Rumah subsidi berkualitas dengan lingkungan asri, tenang, dan lokasi strategis. Dilengkapi tembok belakang setinggi 2 meter dan Sertifikat IMB terjamin, memberikan rasa aman dan nyaman untuk keluarga Anda. Pilihan tepat untuk masa depan.",
 
-export function getPropertyBySlug(slug) {
-  return allProperties.find((property) => property.slug === slug);
+  bedrooms: 2,
+  bathrooms: 1,
+  area: 29,
+  landArea: 60,
+  carport: 1,
+
+  features: [
+    "Include tembok belakang rumah 2 meter",
+    "Sertifikat IMB Terjamin",
+    "Lingkungan Kawasan Asri dan Tenang",
+    "Lokasi Strategis & Mudah di Akses",
+    "Carport untuk 1 Mobil",
+  ],
+
+  detailedSpecifications: {
+    pondasi: "Batu Kali",
+    struktur: "Beton Bertulang",
+    lantai: "Keramik 40x40",
+    dinding: "Batako Plester, Aci, Cat",
+    plafond: "Rangka Hollow, Gypsum",
+    kerangkaAtap: "Baja Ringan",
+    atap: "Genteng Beton",
+    kusen: "Kayu Keras",
+    kamarMandi: " Kloset Jongkok",
+    listrik: "1300 Watt",
+    air: "Sumur Gali (Pompa)",
+  },
+
+  price: 100000000,
+  priceQualifier: "mulai",
+  priceType: "",
+};
+
+export function getProperty() {
+  return unit;
 }

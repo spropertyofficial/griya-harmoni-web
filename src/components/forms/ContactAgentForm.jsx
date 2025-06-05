@@ -105,8 +105,7 @@ export default function ContactAgentForm({
         `Saya tertarik dengan: ${propertyName}.\n\n` +
         `Detail Kontak Saya:\n` +
         `Email: ${formData.email}\n` +
-        `Telepon: ${formData.phone}\n\n` +
-        `Pesan Tambahan:\n${formData.message}`
+        `Telepon: ${formData.phone}\n\n`
     );
     const waLink = `https://wa.me/${agentWhatsappNumber}?text=${waMessage}`;
     window.open(waLink, "_blank");
@@ -133,7 +132,7 @@ export default function ContactAgentForm({
           phone: "",
           message: initialMessage,
         });
-      }, 2500);
+      }, 1000);
     } else {
       setSubmitStatus({
         type: "warning",
