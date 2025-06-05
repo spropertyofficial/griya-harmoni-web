@@ -133,7 +133,7 @@ export default function ContactAgentForm({
           phone: "",
           message: initialMessage,
         });
-      }, 2500);
+      }, 1000);
     } else {
       setSubmitStatus({
         type: "warning",
