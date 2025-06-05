@@ -1,5 +1,5 @@
 // src/app/tipe-rumah/page.jsx
-import { getAllProperties } from "@/data/mockProperties";
+import { getAllProperties, getProperty } from "@/data/mockProperties";
 import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -20,7 +20,7 @@ import { notFound } from "next/navigation";
 import PropertyImageGallery from "@/components/common/PropertyImageGallery";
 import ContactAgentForm from "@/components/forms/ContactAgentForm";
 
-const property = getAllProperties()[0];
+const property = getProperty();
 
 export const metadata = {
   title: property
