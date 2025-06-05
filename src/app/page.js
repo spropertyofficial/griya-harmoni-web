@@ -32,7 +32,7 @@ export default function HomePage() {
           quality={90}
           priority
         />
-        <div className="absolute inset-0 bg-black opacity-30"></div>
+        <div className="absolute inset-0 bg-black opacity-35"></div>
       </div>
       <section
         className={`relative w-full min-h-[70vh] md:min-h-[85vh] flex items-center justify-center text-white ${heroContentPaddingTop} ${heroContentPaddingBottom}`}
