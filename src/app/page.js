@@ -13,6 +13,7 @@ import {
   faRulerCombined,
   faCar,
 } from "@fortawesome/free-solid-svg-icons";
+import { getProperty } from "@/data/mockProperties";
 
 export default function HomePage() {
   const unit = getProperty();
