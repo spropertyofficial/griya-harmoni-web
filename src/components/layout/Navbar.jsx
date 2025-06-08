@@ -17,7 +17,7 @@ export default function Navbar() {
   const navLinks = [
     { href: "/tentang-kami", label: "Tentang Kami" },
     { href: "/tipe-rumah", label: "Tipe Rumah" },
-    { href: "/fasilitas-kawasan", label: "Fasilitas dan kawasan" },
+    { href: "/fasilitas-kawasan", label: "Fasilitas & kawasan" },
   ];
 
   const linkClasses =
@@ -30,9 +30,16 @@ export default function Navbar() {
           href="/"
           className="text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors"
         >
-          GriyaHarmoni
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            width={100}
+            height={100}
+            className="w-auto h-auto"
+            priority
+            quality={100}
+          />
         </Link>
-
         <ul className="hidden md:flex space-x-4 lg:space-x-6">
           {navLinks.map((link) => (
             <li key={link.label}>
