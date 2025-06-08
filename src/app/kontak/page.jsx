@@ -16,16 +16,15 @@ export const metadata = {
 };
 
 export default function KontakPage() {
-  // Detail kontak perusahaan Anda (ganti dengan informasi yang sebenarnya)
+  // Detail kontak perusahaan
   const contactDetails = {
-    address:
-      "Jl. Boulevard Griya Harmoni No. 1, Cisoka, Tangerang, Banten 15730",
-    phone: "+62 21 555 0123",
-    whatsappDisplay: "0812 3456 7890", // Nomor untuk ditampilkan
-    whatsappLink: "6285123123891", // Nomor untuk link wa.me (tanpa + atau 0 di depan)
-    email: "marketing@griya-harmoni.com",
+    address: "Cibugel, Cisoka, Tangerang, Indonesia, Banten",
+    phone: "+62 811-286-885",
+    whatsappDisplay: "+62 811-286-885",
+    whatsappLink: "62811286885",
+    email: "griyaharmoni2021@gmail.com",
     operationalHours:
-      "Senin - Jumat: 09:00 - 17:00 WIB\nSabtu: 09:00 - 14:00 WIB\nMinggu & Hari Libur: Dengan perjanjian",
+      "Selalu Buka",
   };
   const mapEmbedSrc =
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4059.059353234433!2d106.41303907509567!3d-6.25005199373836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e42050040fc7ddd%3A0x86616f93514ebe15!2sGriya%20Harmoni%20Cibugel!5e1!3m2!1sen!2sid!4v1748859109326!5m2!1sen!2sid";

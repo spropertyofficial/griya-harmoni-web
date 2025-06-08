@@ -7,6 +7,7 @@ import {
   faTiktok, // Mengganti Twitter dengan TikTok sesuai tren
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons"; // Ikon brand
+import Image from "next/image";
 // Jika Anda ingin ikon generik untuk "situs" atau "blog"
 // import { faGlobe, faRss } from "@fortawesome/free-solid-svg-icons";
 
@@ -16,32 +17,26 @@ export default function Footer() {
   const socialLinks = [
     {
       name: "Facebook",
-      href: "https://facebook.com/rumahrgiyaharmoni",
+      href: "https://www.facebook.com/profile.php?id=61554672707011",
       icon: faFacebookF,
-    }, // Ganti dengan URL Anda
+    },
     {
       name: "Instagram",
-      href: "https://instagram.com/rumahrgiyaharmoni",
+      href: "https://www.instagram.com/rumahgriyaharmoni/",
       icon: faInstagram,
-    }, // Ganti dengan URL Anda
+    },
     {
       name: "TikTok",
-      href: "https://tiktok.com/@rumahrgiyaharmoni",
+      href: "https://www.tiktok.com/@griyaharmonicibugel",
       icon: faTiktok,
-    }, // Ganti dengan URL Anda
-    {
-      name: "YouTube",
-      href: "https://youtube.com/rumahrgiyaharmoni",
-      icon: faYoutube,
-    }, // Ganti dengan URL Anda
+    },
   ];
 
   const quickLinks = [
     { name: "Beranda", href: "/" },
     { name: "Tentang Kami", href: "/tentang-kami" },
-    { name: "Unit Kami", href: "/tipe-rumah" }, // Mengarah ke detail unit tunggal
-    { name: "Fasilitas & Kawasan", href: "/fasilitas-dan-kawasan" },
-    { name: "Blog", href: "/blog" }, // Jika sudah ada atau direncanakan
+    { name: "Tipe Rumah", href: "/tipe-rumah" },
+    { name: "Fasilitas & Kawasan", href: "/fasilitas-kawasan" },
     { name: "Kontak", href: "/kontak" },
   ];
 
@@ -51,16 +46,20 @@ export default function Footer() {
       {/* Warna lebih gelap, padding disesuaikan */}
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 items-start">
-          {/* Kolom 1: Logo dan Deskripsi Singkat */}
           <div className="md:col-span-1">
             <Link
               href="/"
               className="inline-block mb-4 text-2xl font-bold text-white hover:text-sky-300 transition-colors"
             >
-              GriyaHarmoni
-              <span className="block text-xs font-normal text-sky-400 tracking-wider">
-                CIBUGEL
-              </span>
+              <Image
+                src="/logo-footer.png"
+                alt="Logo"
+                width={100}
+                height={100}
+                className="w-auto h-auto"
+                priority
+                quality={100}
+              />
             </Link>
             <p className="text-sm leading-relaxed">
               Wujudkan impian hunian idaman Anda bersama kami. Kualitas,
@@ -114,24 +113,23 @@ export default function Footer() {
                 href="mailto:marketing@griya-harmoni.com"
                 className="hover:text-sky-300 hover:underline"
               >
-                marketing@griya-harmoni.com
+                griyaharmoni2021@gmail.com
               </a>{" "}
-              {/* Ganti email */}
             </p>
             <p className="text-sm">
               Telp:{" "}
               <a
-                href="tel:+62215550123"
+                href="tel:+6811286885
+"
                 className="hover:text-sky-300 hover:underline"
               >
-                +62 21 555 0123
+                0811-286-885
               </a>{" "}
               {/* Ganti nomor telepon */}
             </p>
           </div>
         </div>
 
-        {/* Garis Pemisah */}
         <div className="border-t border-slate-700 my-6"></div>
 
         {/* Bagian Copyright */}
