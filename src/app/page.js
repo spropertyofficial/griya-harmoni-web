@@ -24,7 +24,7 @@ export default function HomePage() {
     <>
       <div className="fixed inset-0 -z-10">
         <Image
-          src="https://picsum.photos/1920/1080"
+          src="/images/unit/griya-harmoni-cibugel-fasad-deret-1.jpg"
           alt="Latar Belakang Perumahan Griya Harmoni"
           fill
           sizes="100vw"
@@ -73,8 +73,8 @@ export default function HomePage() {
                 Lokasi Strategis
               </h3>
               <p className="text-gray-600">
-                Akses mudah ke pusat kota, area bisnis, sekolah, dan fasilitas
-                publik lainnya.
+                Lokasi strategis dekat dengan pusat kota, pasar tradisional, dan
+                akses transportasi umum yang mudah dijangkau.
               </p>
             </div>
             <div className="p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow">

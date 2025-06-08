@@ -8,6 +8,7 @@ import {
   faBullseye,
   faHandshake,
   faLightbulb,
+  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
 export const metadata = {
@@ -57,8 +58,8 @@ export default function TentangKamiPage() {
           <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-md">
             {/* Ganti dengan gambar yang relevan dengan perusahaan Anda atau suasana kantor */}
             <Image
-              src="https://picsum.photos/seed/company/800/600"
-              alt="Tim Griya Harmoni atau Suasana Kantor"
+              src="/griya-harmoni-cibugel-gate.jpg"
+              alt="Gerbang Griya Harmoni"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -120,6 +121,20 @@ export default function TentangKamiPage() {
 
       {/* Bagian Misi & Visi (Contoh) */}
       <section className="grid md:grid-cols-2 gap-8 mb-12 md:mb-16">
+        <div className="bg-green-50 p-8 rounded-lg shadow-md">
+          <div className="flex items-center mb-3">
+            <FontAwesomeIcon
+              icon={faUser}
+              className="text-3xl text-green-600 mr-3"
+            />{" "}
+            {/* Bisa pakai ikon lain */}
+            <h2 className="text-2xl font-bold text-slate-700">Visi Kami</h2>
+          </div>
+          <p className="text-gray-700 leading-relaxed">
+            Menjadi pengembang properti terdepan dan paling tepercaya, dikenal
+            karena kualitas, inovasi, dan kontribusi positif bagi masyarakat.
+          </p>
+        </div>
         <div className="bg-blue-50 p-8 rounded-lg shadow-md">
           <div className="flex items-center mb-3">
             <FontAwesomeIcon
@@ -144,21 +159,6 @@ export default function TentangKamiPage() {
               Berkontribusi pada pengembangan komunitas dan lingkungan sekitar.
             </li>
           </ul>
-        </div>
-        <div className="bg-green-50 p-8 rounded-lg shadow-md">
-          <div className="flex items-center mb-3">
-            <FontAwesomeIcon
-              icon={faBuilding}
-              className="text-3xl text-green-600 mr-3"
-            />{" "}
-            {/* Bisa pakai ikon lain */}
-            <h2 className="text-2xl font-bold text-slate-700">Visi Kami</h2>
-          </div>
-          <p className="text-gray-700 leading-relaxed">
-            Menjadi pengembang properti terdepan dan paling tepercaya di
-            Indonesia, dikenal karena kualitas, inovasi, dan kontribusi positif
-            bagi masyarakat.
-          </p>
         </div>
       </section>
 

@@ -1,21 +1,16 @@
+import { unitImages } from "./unitImages";
+
+const floorPlanImage = unitImages.find((img) => img.type === "denah");
+const galleryImages = unitImages.filter((img) => img.type !== "denah");
+
 export const unit = {
   id: 1,
   slug: "unit-subsidi-29-60",
   name: "Tipe 29/60",
-  image: "https://picsum.photos/800/600?random=1",
-  images: [
-    "https://picsum.photos/800/600?random=2",
-    "https://picsum.photos/800/600?random=3",
-    "https://picsum.photos/800/600?random=4",
-    "https://picsum.photos/800/600?random=5",
-    "https://picsum.photos/800/600?random=6",
-    "https://picsum.photos/800/600?random=7",
-    "https://picsum.photos/800/600?random=8",
-    "https://picsum.photos/800/600?random=9",
-    "https://picsum.photos/800/600?random=10",
-  ],
-  floorPlanImage:
-    "https://griyaharmoni.com/wp-content/uploads/2024/01/floorplan-Griya-harmoni-copy-1028x1536.jpg",
+  image: galleryImages[0]?.src || "/placeholder-image.jpg", 
+  images: galleryImages.map((img) => img.src),
+  floorPlanImage: floorPlanImage?.src || null,
+
   status: "For Sale",
   location: "Cisoka, Kab. Tangerang",
   fullAddress:
