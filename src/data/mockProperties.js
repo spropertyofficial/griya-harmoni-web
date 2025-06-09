@@ -17,7 +17,7 @@ export const unit = {
     "Griya Harmoni Cibugel, Jl. Specht Hubarok, Bojongloa, Kec. Cisoka, Kabupaten Tangerang, Banten 15730 (Dekat PCX8+R36)",
 
   description:
-    "Wujudkan impian hunian idaman Anda di Griya Harmoni Cibugel. Rumah subsidi berkualitas dengan lingkungan asri, tenang, dan lokasi strategis. Dilengkapi tembok belakang setinggi 2 meter dan Sertifikat IMB terjamin, memberikan rasa aman dan nyaman untuk keluarga Anda. Pilihan tepat untuk masa depan.",
+    "Wujudkan impian hunian idaman Anda bersama Griya Harmoni Cibugel. Rumah subsidi berkualitas dengan lingkungan asri, tenang dan lokasi strategis. Dilengkapi tembok belakang setinggi 2 meter dan Sertifikat IMB terjamin. Hunian ini memberikan rasa aman dan nyaman untuk keluarga Anda. Griya Harmoni Cibugel adalah pilihan tepat untuk masa depan Anda.",
 
   bedrooms: 2,
   bathrooms: 1,
@@ -30,7 +30,7 @@ export const unit = {
     "Sertifikat IMB Terjamin",
     "Lingkungan Kawasan Asri dan Tenang",
     "Lokasi Strategis & Mudah di Akses",
-    "Carport untuk 1 Mobil",
+    "Carport untuk 1 Mobil dan 1 motor",
   ],
 
   detailedSpecifications: {
@@ -47,7 +47,7 @@ export const unit = {
     air: "Sumur Gali (Pompa)",
   },
 
-  price: 100000000,
+  price: 185000000,
   priceQualifier: "mulai",
   priceType: "",
 };

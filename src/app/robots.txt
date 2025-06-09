@@ -1,0 +1,7 @@
+# robots.txt for Griya Harmoni Web
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://griya-harmoni-web.vercel.app/sitemap.xml

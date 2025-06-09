@@ -278,7 +278,7 @@ export default function SinglePropertyDetailPage() {
                 <ContactAgentForm
                   propertyName={property.name}
                   formTitle={`Tertarik Unit Ini?`} // Judul ini bisa diubah jika mau
-                  formSubtitle="Hubungi agen kami untuk info lebih lanjut atau jadwal survei." // Subjudul disesuaikan
+                  formSubtitle="Hubungi Marketing kami untuk info lebih lanjut atau jadwal survei." // Subjudul disesuaikan
                 />
               </div>
             </aside>
