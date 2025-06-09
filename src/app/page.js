@@ -86,7 +86,7 @@ export default function HomePage() {
               </h3>
               <p className="text-gray-600">
                 Rumah dengan desain arsitektur modern minimalis yang fungsional
-                dan estetis.
+                dan estetik.
               </p>
             </div>
             <div className="p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
