@@ -107,13 +107,11 @@ export default function Navbar() {
   ];
 
   const linkClasses =
-    "text-black/60 hover:text-black/90 px-3 py-2 rounded-md text-sm font-medium transition-colors";
+    "text-black/60 hover:text-black/90 rounded-md text-sm font-medium transition-colors";
 
   return (
     <nav
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ease-in-out ${
-        isScrolled ? "p-2 sm:p-4" : "p-2 sm:p-4"
-      }`}
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ease-in-out p-2 sm:p-4`}
     >
       <div
         className={`container mx-auto px-4 py-3 flex justify-between items-center 
@@ -154,7 +152,8 @@ export default function Navbar() {
                 href={link.href}
                 className={
                   isScrolled
-                    ? "text-white hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                    ? "text-white hover:text-blue-400 rounded-md text-sm font-medium transition-colors"
+
                     : linkClasses
                 }
               >
