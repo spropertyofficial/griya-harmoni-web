@@ -87,4 +87,9 @@ export const unitImages = [
     alt: "Denah atau floor plan unit Tipe 29/60 Griya Harmoni Cibugel",
     type: "denah",
   },
+  {
+    src: "/images/unit/griya-harmoni-cibugel-interior-topView.png",
+    alt: "View atas interior Griya Harmoni Cibugel",
+    type: "interior",
+  },
 ];
