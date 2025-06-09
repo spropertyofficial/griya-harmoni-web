@@ -10,6 +10,7 @@ import {
   faLightbulb,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
+import FadeInWhenVisible from "@/components/common/FadeInWhenVisible";
 
 export const metadata = {
   title: "Tentang Kami - Griya Harmoni",
@@ -75,91 +76,103 @@ export default function TentangKamiPage() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Nilai 1 */}
-          <div className="bg-slate-50 p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow">
-            <FontAwesomeIcon
-              icon={faHandshake}
-              className="text-4xl text-orange-500 mb-3"
-            />
-            <h3 className="text-xl font-semibold text-slate-800 mb-2">
-              Integritas
-            </h3>
-            <p className="text-gray-600 text-sm">
-              Kami menjunjung tinggi kejujuran dan transparansi dalam setiap
-              aspek bisnis kami.
-            </p>
-          </div>
+          <FadeInWhenVisible delay={0.4}>
+            <div className="bg-slate-50 p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow">
+              <FontAwesomeIcon
+                icon={faHandshake}
+                className="text-4xl text-orange-500 mb-3"
+              />
+              <h3 className="text-xl font-semibold text-slate-800 mb-2">
+                Integritas
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Kami menjunjung tinggi kejujuran dan transparansi dalam setiap
+                aspek bisnis kami.
+              </p>
+            </div>
+          </FadeInWhenVisible>
           {/* Nilai 2 */}
-          <div className="bg-slate-50 p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow">
-            <FontAwesomeIcon
-              icon={faLightbulb}
-              className="text-4xl text-green-500 mb-3"
-            />
-            <h3 className="text-xl font-semibold text-slate-800 mb-2">
-              Inovasi
-            </h3>
-            <p className="text-gray-600 text-sm">
-              Terus berinovasi untuk menghadirkan desain dan solusi hunian yang
-              modern dan fungsional.
-            </p>
-          </div>
+          <FadeInWhenVisible delay={0.8}>
+            <div className="bg-slate-50 p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow">
+              <FontAwesomeIcon
+                icon={faLightbulb}
+                className="text-4xl text-green-500 mb-3"
+              />
+              <h3 className="text-xl font-semibold text-slate-800 mb-2">
+                Inovasi
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Terus berinovasi untuk menghadirkan desain dan solusi hunian
+                yang modern dan fungsional.
+              </p>
+            </div>
+          </FadeInWhenVisible>
+
           {/* Nilai 3 */}
-          <div className="bg-slate-50 p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow">
-            <FontAwesomeIcon
-              icon={faUsers}
-              className="text-4xl text-sky-500 mb-3"
-            />
-            <h3 className="text-xl font-semibold text-slate-800 mb-2">
-              Fokus Pelanggan
-            </h3>
-            <p className="text-gray-600 text-sm">
-              Kepuasan dan kebutuhan pelanggan adalah prioritas utama dalam
-              layanan kami.
-            </p>
-          </div>
+          <FadeInWhenVisible delay={1}>
+            <div className="bg-slate-50 p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow">
+              <FontAwesomeIcon
+                icon={faUsers}
+                className="text-4xl text-sky-500 mb-3"
+              />
+              <h3 className="text-xl font-semibold text-slate-800 mb-2">
+                Fokus Pelanggan
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Kepuasan dan kebutuhan pelanggan adalah prioritas utama dalam
+                layanan kami.
+              </p>
+            </div>
+          </FadeInWhenVisible>
         </div>
       </section>
 
       {/* Bagian Misi & Visi (Contoh) */}
       <section className="grid md:grid-cols-2 gap-8 mb-12 md:mb-16">
-        <div className="bg-green-50 p-8 rounded-lg shadow-md">
-          <div className="flex items-center mb-3">
-            <FontAwesomeIcon
-              icon={faUser}
-              className="text-3xl text-green-600 mr-3"
-            />{" "}
-            {/* Bisa pakai ikon lain */}
-            <h2 className="text-2xl font-bold text-slate-700">Visi Kami</h2>
+        <FadeInWhenVisible delay={0.3}>
+          <div className="bg-green-50 p-8 rounded-lg shadow-md h-full">
+            <div className="flex items-center mb-3">
+              <FontAwesomeIcon
+                icon={faUser}
+                className="text-3xl text-green-600 mr-3"
+              />{" "}
+              {/* Bisa pakai ikon lain */}
+              <h2 className="text-2xl font-bold text-slate-700">Visi Kami</h2>
+            </div>
+            <p className="text-gray-700 leading-relaxed">
+              Menjadi pengembang properti terdepan dan paling tepercaya, dikenal
+              karena kualitas, inovasi, dan kontribusi positif bagi masyarakat.
+            </p>
           </div>
-          <p className="text-gray-700 leading-relaxed">
-            Menjadi pengembang properti terdepan dan paling tepercaya, dikenal
-            karena kualitas, inovasi, dan kontribusi positif bagi masyarakat.
-          </p>
-        </div>
-        <div className="bg-blue-50 p-8 rounded-lg shadow-md">
-          <div className="flex items-center mb-3">
-            <FontAwesomeIcon
-              icon={faBullseye}
-              className="text-3xl text-blue-600 mr-3"
-            />
-            <h2 className="text-2xl font-bold text-slate-700">Misi Kami</h2>
+        </FadeInWhenVisible>
+        <FadeInWhenVisible delay={0.3}>
+          <div className="bg-blue-50 p-8 rounded-lg shadow-md">
+            <div className="flex items-center mb-3">
+              <FontAwesomeIcon
+                icon={faBullseye}
+                className="text-3xl text-blue-600 mr-3"
+              />
+              <h2 className="text-2xl font-bold text-slate-700">Misi Kami</h2>
+            </div>
+            <ul className="list-disc list-inside text-gray-700 leading-relaxed space-y-1 pl-2">
+              <li>
+                Menyediakan properti berkualitas tinggi dengan harga yang
+                kompetitif.
+              </li>
+              <li>
+                Menciptakan lingkungan hunian yang aman, nyaman, dan harmonis.
+              </li>
+              <li>
+                Memberikan pelayanan terbaik dan profesional kepada setiap
+                pelanggan.
+              </li>
+              <li>
+                Berkontribusi pada pengembangan komunitas dan lingkungan
+                sekitar.
+              </li>
+            </ul>
           </div>
-          <ul className="list-disc list-inside text-gray-700 leading-relaxed space-y-1 pl-2">
-            <li>
-              Menyediakan properti berkualitas tinggi dengan harga yang
-              kompetitif.
-            </li>
-            <li>
-              Menciptakan lingkungan hunian yang aman, nyaman, dan harmonis.
-            </li>
-            <li>
-              Memberikan pelayanan terbaik dan profesional kepada setiap
-              pelanggan.
-            </li>
-            <li>
-              Berkontribusi pada pengembangan komunitas dan lingkungan sekitar.
-            </li>
-          </ul>
-        </div>
+        </FadeInWhenVisible>
       </section>
 
       {/* Bagian CTA (Call to Action) */}
