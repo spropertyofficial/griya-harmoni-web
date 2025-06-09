@@ -1,4 +1,5 @@
 export const unitImages = [
+  // Fasad images
   {
     src: "/images/unit/griya-harmoni-cibugel-fasad-unit-tunggal.jpg",
     alt: "Tampak depan satu unit rumah Griya Harmoni Cibugel",
@@ -19,49 +20,71 @@ export const unitImages = [
     alt: "Tampak depan deretan rumah Griya Harmoni Cibugel dari sudut lain",
     type: "fasad",
   },
+
+  // Interior - Ruang Tamu
   {
-    src: "/images/unit/griya-harmoni-cibugel-ruang-tengah.jpg",
-    alt: "Interior ruang tengah atau ruang keluarga Griya Harmoni Cibugel",
+    src: "/images/unit/griya-harmoni-cibugel-ruang-tamu-sudut-1.jpg",
+    alt: "Interior ruang tamu Griya Harmoni Cibugel dari sudut pertama",
     type: "interior",
   },
   {
-    src: "/images/unit/griya-harmoni-cibugel-kamar-tidur-1.jpg",
-    alt: "Interior kamar tidur pertama Griya Harmoni Cibugel",
+    src: "/images/unit/griya-harmoni-cibugel-ruang-tamu-sudut-2.jpg",
+    alt: "Interior ruang tamu Griya Harmoni Cibugel dari sudut kedua",
     type: "interior",
   },
   {
-    src: "/images/unit/griya-harmoni-cibugel-kamar-tidur-2.jpg",
-    alt: "Interior kamar tidur kedua Griya Harmoni Cibugel",
+    src: "/images/unit/griya-harmoni-cibugel-ruang-tamu-area-tv.jpg",
+    alt: "Area TV di ruang tamu Griya Harmoni Cibugel",
+    type: "interior",
+  },
+
+  // Interior - Kamar Tidur Utama
+  {
+    src: "/images/unit/griya-harmoni-cibugel-kamar-tidur-utama-tampak-luas.jpg",
+    alt: "Interior kamar tidur utama Griya Harmoni Cibugel tampak luas",
     type: "interior",
   },
   {
-    src: "/images/unit/griya-harmoni-cibugel-kamar-tidur-furnished.jpg",
-    alt: "Contoh interior kamar tidur Griya Harmoni Cibugel dengan perabotan",
+    src: "/images/unit/griya-harmoni-cibugel-kamar-tidur-utama-detail.jpg",
+    alt: "Detail interior kamar tidur utama Griya Harmoni Cibugel",
+    type: "interior",
+  },
+
+  // Interior - Kamar Tidur Kedua
+  {
+    src: "/images/unit/griya-harmoni-cibugel-kamar-tidur-kedua-sudut-1.jpg",
+    alt: "Interior kamar tidur kedua Griya Harmoni Cibugel dari sudut pertama",
     type: "interior",
   },
   {
-    src: "/images/unit/griya-harmoni-cibugel-area-dapur.jpg",
-    alt: "Area dapur atau kitchenette di unit Griya Harmoni Cibugel",
+    src: "/images/unit/griya-harmoni-cibugel-kamar-tidur-kedua-sudut-2.jpg",
+    alt: "Interior kamar tidur kedua Griya Harmoni Cibugel dari sudut kedua",
     type: "interior",
   },
   {
-    src: "/images/unit/griya-harmoni-cibugel-interior-ruang-utama.jpg",
-    alt: "Tampilan interior ruang utama yang kosong di Griya Harmoni Cibugel",
+    src: "/images/unit/griya-harmoni-cibugel-kamar-tidur-kedua-sudut-3.jpg",
+    alt: "Interior kamar tidur kedua Griya Harmoni Cibugel dari sudut ketiga",
     type: "interior",
   },
+
+  // Interior - Balkon
   {
-    src: "/images/unit/griya-harmoni-cibugel-interior-lorong.jpg",
-    alt: "Interior lorong di dalam unit Griya Harmoni Cibugel",
+    src: "/images/unit/griya-harmoni-cibugel-balkon.jpg",
+    alt: "Area balkon unit Griya Harmoni Cibugel",
     type: "interior",
   },
-  {
-    src: "/images/unit/griya-harmoni-cibugel-denah-unit-tipe-29-60.png",
-    alt: "Denah atau floor plan unit Tipe 29/60 Griya Harmoni Cibugel",
-    type: "denah",
-  },
+
+  // Interior - Top View
   {
     src: "/images/unit/griya-harmoni-cibugel-interior-topView.png",
     alt: "View atas interior Griya Harmoni Cibugel",
     type: "interior",
+  },
+
+  // Denah
+  {
+    src: "/images/unit/griya-harmoni-cibugel-denah-unit-tipe-29-60.png",
+    alt: "Denah atau floor plan unit Tipe 29/60 Griya Harmoni Cibugel",
+    type: "denah",
   },
 ];
