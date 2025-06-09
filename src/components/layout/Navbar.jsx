@@ -145,7 +145,6 @@ export default function Navbar() {
             />
           </Link>
         </motion.div>
-
         <ul className="hidden md:flex items-center space-x-2 lg:space-x-4">
           {navLinks.map((link) => (
             <li key={link.label}>
@@ -154,6 +153,7 @@ export default function Navbar() {
                 className={
                   isScrolled
                     ? "text-white hover:text-blue-400 rounded-md text-sm font-medium transition-colors"
+
                     : linkClasses
                 }
               >
