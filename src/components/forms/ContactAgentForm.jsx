@@ -20,7 +20,7 @@ export default function ContactAgentForm({
   formTitle = `Tertarik dengan Property Ini?`,
   formSubtitle = "Kirim pesan untuk info lebih lanjut atau jadwal kunjungan.",
   submitButtonText = "Hubungi Kami",
-  initialMessage = `Halo, saya tertarik dengan ${propertyName}. Mohon informasinya lebih lanjut.`,
+  initialMessage = `Halo, saya tertarik dengan hunian Griya Harmoni Cibugel. Mohon informasinya lebih lanjut.`,
 }) {
   const [formData, setFormData] = useState({
     name: "",

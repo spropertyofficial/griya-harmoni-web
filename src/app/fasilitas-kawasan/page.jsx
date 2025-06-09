@@ -28,9 +28,13 @@ import {
   faUniversity,
   faShoppingCart,
   faSchool,
-  faCheckCircle, // Untuk Keunggulan Area
+  faCheckCircle,
+  faIndustry, // Untuk Keunggulan Area
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import FadeInWhenVisible from "@/components/common/FadeInWhenVisible";
+import { faBuilding } from "@fortawesome/free-regular-svg-icons";
+import Image from "next/image";
 // import Image from "next/image"; // Jika diperlukan untuk gambar ilustrasi
 
 export const metadata = {
@@ -39,55 +43,21 @@ export const metadata = {
     "Jelajahi fasilitas lengkap di dalam Griya Harmoni Cibugel dan kemudahan akses ke berbagai titik penting serta fasilitas publik di kawasan Cisoka, Tangerang.",
 };
 
-// --- DATA UNTUK FASILITAS INTERNAL (Ambil dari halaman Fasilitas Anda sebelumnya) ---
-const internalFacilitiesData = [
-  {
-    icon: faShieldHeart,
-    name: "Keamanan Terpadu 24/7",
-    description:
-      "Sistem keamanan modern dengan CCTV, patroli rutin, dan akses terkontrol untuk ketenangan Anda.",
-    category: "Keamanan", // Anda bisa tetap pakai atau hilangkan kategori/highlight di tampilan
-    highlight: "Prioritas Utama",
-    gradientClasses: "from-red-500 to-pink-500",
+const gridContainerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15, // Jeda 0.15 detik antara setiap anak (kartu)
+    },
   },
-  {
-    icon: faWaterLadder,
-    name: "Kolam Renang Keluarga",
-    description:
-      "Kolam renang berstandar internasional dengan area dewasa & anak, plus poolside lounge.",
-    category: "Rekreasi",
-    highlight: "Favorit",
-    gradientClasses: "from-blue-500 to-sky-500",
-  },
-  {
-    icon: faSeedling,
-    name: "Taman Hijau & Playground",
-    description:
-      "Desain lanskap profesional dengan taman tematik, area bermain anak yang aman dan edukatif.",
-    category: "Lingkungan & Keluarga",
-    highlight: "Asri & Edukatif",
-    gradientClasses: "from-green-500 to-emerald-500",
-  },
-  {
-    icon: faPersonRunning,
-    name: "Sarana Olahraga",
-    description:
-      "Jogging track yang nyaman dan area olahraga outdoor untuk mendukung gaya hidup sehat.",
-    category: "Kesehatan",
-    highlight: "Aktif",
-    gradientClasses: "from-purple-500 to-indigo-500",
-  },
-  {
-    icon: faPlaceOfWorship,
-    name: "Tempat Ibadah",
-    description:
-      "Masjid dengan desain menawan dan fasilitas lengkap untuk kenyamanan beribadah.",
-    category: "Spiritual",
-    highlight: "Tenang",
-    gradientClasses: "from-teal-500 to-cyan-500",
-  },
-  // Tambahkan fasilitas internal lainnya jika ada
-];
+};
+
+// Varian untuk setiap item di dalam grid (child/kartu)
+const gridItemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
 
 const strategicLocationsData = [
   {
@@ -138,7 +108,7 @@ const strategicLocationsData = [
   {
     id: "rencana-tol",
     icon: faRoute,
-    name: "Rencana Gerbang Tol Serba Raja",
+    name: "Rencana Gerbang Tol SerbaRaja",
     estimate: "7 Menit",
     iconBgClass: "bg-emerald-100",
     iconTextClass: "text-emerald-600",
@@ -173,6 +143,62 @@ const strategicLocationsData = [
   },
 ];
 
+const industriData = [
+  {
+    id: "mayora",
+    icon: faIndustry,
+    name: "PT. Mayora Indah Tbk",
+    estimate: "25 Menit",
+    iconBgClass: "bg-blue-100",
+    iconTextClass: "text-blue-600",
+    borderColorClass: "border-blue-500",
+  },
+  {
+    id: "multibox",
+    icon: faIndustry,
+    name: "PT. Multibox Indonesia",
+    estimate: "20 Menit",
+    iconBgClass: "bg-purple-100",
+    iconTextClass: "text-purple-600",
+    borderColorClass: "border-purple-500",
+  },
+  {
+    id: "charoen",
+    icon: faIndustry,
+    name: "PT. Charoen Pokphand Indonesia Tbk",
+    estimate: "30 Menit",
+    iconBgClass: "bg-emerald-100",
+    iconTextClass: "text-emerald-600",
+    borderColorClass: "border-emerald-500",
+  },
+  {
+    id: "toto",
+    icon: faIndustry,
+    name: "PT Surya Toto Indonesia Tbk",
+    estimate: "35 Menit",
+    iconBgClass: "bg-amber-100",
+    iconTextClass: "text-amber-600",
+    borderColorClass: "border-amber-500",
+  },
+  {
+    id: "nikomas",
+    icon: faIndustry,
+    name: "PT. Nikomas Gemilang",
+    estimate: "40 Menit",
+    iconBgClass: "bg-rose-100",
+    iconTextClass: "text-rose-600",
+    borderColorClass: "border-rose-500",
+  },
+  {
+    id: "ching-luh",
+    icon: faIndustry,
+    name: "PT. Ching Luh Indonesia",
+    estimate: "35 Menit",
+    iconBgClass: "bg-cyan-100",
+    iconTextClass: "text-cyan-600",
+    borderColorClass: "border-cyan-500",
+  },
+];
 const publicFacilitiesData = [
   {
     id: "pendidikan", // id unik untuk key
@@ -238,51 +264,6 @@ const publicFacilitiesData = [
       { name: "Pangkalan Ojek", estimate: "Mudah dijangkau" },
     ],
   },
-  // Anda bisa tambahkan kategori lain seperti Tempat Ibadah (di luar komplek), Rekreasi, dll.
-];
-
-// --- DATA UNTUK KEUNGGULAN AREA ---
-const areaAdvantagesData = [
-  {
-    id: "asri",
-    icon: faSeedling,
-    title: "Lingkungan Asri & Nyaman",
-    description:
-      "Dikelilingi kehijauan yang menyejukkan, ideal untuk keluarga yang mendambakan ketenangan.",
-    iconColor: "text-green-600",
-  },
-  {
-    id: "strategis",
-    icon: faLocationDot,
-    title: "Lokasi Strategis",
-    description:
-      "Akses mudah ke berbagai fasilitas publik, pusat perbelanjaan, dan transportasi umum.",
-    iconColor: "text-blue-600",
-  },
-  {
-    id: "aman",
-    icon: faShieldHalved,
-    title: "Keamanan 24 Jam",
-    description:
-      "Sistem keamanan terpadu dengan penjagaan 24 jam dan CCTV untuk kenyamanan penghuni.",
-    iconColor: "text-red-600",
-  },
-  {
-    id: "komunitas",
-    icon: faUsers,
-    title: "Komunitas Harmonis",
-    description:
-      "Lingkungan yang ramah dengan tetangga yang bersahabat, cocok untuk membangun relasi sosial.",
-    iconColor: "text-yellow-600",
-  },
-  {
-    id: "infrastruktur",
-    icon: faRoad,
-    title: "Infrastruktur Modern",
-    description:
-      "Dilengkapi dengan sistem drainase yang baik, jalan lebar, dan penerangan jalan yang memadai.",
-    iconColor: "text-purple-600",
-  },
 ];
 export default function FasilitasDanKawasanPage() {
   const contentSectionPaddingY = "";
@@ -303,7 +284,8 @@ export default function FasilitasDanKawasanPage() {
               {" "}
               {/* Konten dibatasi lebarnya dan rata kiri (default) */}
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mb-4">
-                Fasilitas dan Kawasan <span className="block">Griya Harmoni Cibugel</span>
+                Fasilitas dan Kawasan{" "}
+                <span className="block">Griya Harmoni Cibugel</span>
               </h1>
               <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
                 Temukan kenyamanan hidup terpadu dengan fasilitas internal
@@ -324,70 +306,152 @@ export default function FasilitasDanKawasanPage() {
             >
               {" "}
               {/* Latar berbeda untuk section ini */}
+              <FadeInWhenVisible delay={0.5}>
+                <div className="container mx-auto px-4">
+                  <div className="text-center mb-10 md:mb-12">
+                    <FontAwesomeIcon
+                      icon={faRoute}
+                      className="text-5xl md:text-7xl text-emerald-600 mb-3"
+                    />
+                    <h2 className="text-2xl md:text-3xl font-bold text-slate-800">
+                      Lokasi Strategis & Akses Mudah
+                    </h2>
+                    <p className="text-md text-gray-600 max-w-xl mx-auto mt-2">
+                      Terletak strategis, Griya Harmoni Cibugel menawarkan
+                      kemudahan jangkauan ke berbagai destinasi penting.
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {strategicLocationsData.map((item, index) => (
+                      <FadeInWhenVisible key={item.id} delay={index * 0.2}>
+                        <div className="bg-white p-5 rounded-lg border border-slate-200 hover:border-slate-300 hover:shadow-sm transition-all duration-300">
+                          <div className="flex items-start space-x-3">
+                            {" "}
+                            {/* items-start agar ikon dan teks sejajar di atas */}
+                            <div
+                              className={`flex-shrink-0 w-10 h-10 rounded-md ${
+                                item.iconBgClass || "bg-gray-100"
+                              } ${
+                                item.iconTextClass || "text-gray-600"
+                              } flex items-center justify-center`}
+                            >
+                              <FontAwesomeIcon
+                                icon={item.icon}
+                                className="w-5 h-5"
+                              />
+                            </div>
+                            <div className="flex-grow">
+                              <h3 className="text-md font-semibold text-slate-700">
+                                {item.name}
+                              </h3>
+                              {item.estimate && (
+                                <p
+                                  className={`text-sm font-medium ${
+                                    item.iconTextClass
+                                      ? item.iconTextClass.replace(
+                                          "text-",
+                                          "text-opacity-80 text-"
+                                        )
+                                      : "text-gray-500"
+                                  }`}
+                                >
+                                  {" "}
+                                  {/* Warna estimasi mengikuti warna ikon dengan opacity */}
+                                  {item.estimate}
+                                </p>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      </FadeInWhenVisible>
+                    ))}
+                  </div>
+
+                  <div className="mt-8 flex">
+                    <div className="relative rounded-xl overflow-hidden mx-auto">
+                      <Image
+                        src="/images/lokasi-strategis.png"
+                        alt="Lokasi Strategis Griya Harmoni Cibugel"
+                        width={800}
+                        height={800}
+                        className="w-auto h-auto"
+                        priority
+                      />
+                    </div>
+                  </div>
+                </div>
+              </FadeInWhenVisible>
+            </section>{" "}
+          </div>
+
+          {/* Section Kawasan Industri */}
+          <section
+            id="kawasan-industri"
+            className="py-12 md:py-16 scroll-mt-20"
+          >
+            <FadeInWhenVisible delay={0.5}>
               <div className="container mx-auto px-4">
                 <div className="text-center mb-10 md:mb-12">
                   <FontAwesomeIcon
-                    icon={faRoute}
-                    className="text-5xl md:text-7xl text-emerald-600 mb-3"
+                    icon={faIndustry}
+                    className="text-5xl md:text-7xl text-blue-600 mb-3"
                   />
                   <h2 className="text-2xl md:text-3xl font-bold text-slate-800">
-                    Lokasi Strategis & Akses Mudah
+                    Kawasan Industri Strategis
                   </h2>
                   <p className="text-md text-gray-600 max-w-xl mx-auto mt-2">
-                    Terletak strategis, Griya Harmoni Cibugel menawarkan
-                    kemudahan jangkauan ke berbagai destinasi penting.
+                    Berada di tengah kawasan industri terkemuka dengan akses
+                    mudah ke berbagai pabrik dan zona industri.
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {strategicLocationsData.map((item) => (
-                    <div
-                      key={item.id}
-                      className="bg-white p-5 rounded-lg border border-slate-200 hover:border-slate-300 hover:shadow-sm transition-all duration-300"
-                    >
-                      <div className="flex items-start space-x-3">
-                        {" "}
-                        {/* items-start agar ikon dan teks sejajar di atas */}
-                        <div
-                          className={`flex-shrink-0 w-10 h-10 rounded-md ${
-                            item.iconBgClass || "bg-gray-100"
-                          } ${
-                            item.iconTextClass || "text-gray-600"
-                          } flex items-center justify-center`}
-                        >
-                          <FontAwesomeIcon
-                            icon={item.icon}
-                            className="w-5 h-5"
-                          />
-                        </div>
-                        <div className="flex-grow">
-                          <h3 className="text-md font-semibold text-slate-700">
-                            {item.name}
-                          </h3>
-                          {item.estimate && (
-                            <p
-                              className={`text-sm font-medium ${
-                                item.iconTextClass
-                                  ? item.iconTextClass.replace(
-                                      "text-",
-                                      "text-opacity-80 text-"
-                                    )
-                                  : "text-gray-500"
-                              }`}
-                            >
-                              {" "}
-                              {/* Warna estimasi mengikuti warna ikon dengan opacity */}
-                              {item.estimate}
-                            </p>
-                          )}
+                  {industriData.map((item, index) => (
+                    <FadeInWhenVisible key={item.id} delay={index * 0.2}>
+                      <div className="bg-white p-5 rounded-lg border border-slate-200 hover:border-slate-300 hover:shadow-sm transition-all duration-300">
+                        <div className="flex items-start space-x-3">
+                          <div
+                            className={`flex-shrink-0 w-10 h-10 rounded-md ${
+                              item.iconBgClass || "bg-blue-100"
+                            } ${
+                              item.iconTextClass || "text-blue-600"
+                            } flex items-center justify-center`}
+                          >
+                            <FontAwesomeIcon
+                              icon={item.icon}
+                              className="w-5 h-5"
+                            />
+                          </div>
+                          <div className="flex-grow">
+                            <h3 className="text-md font-semibold text-slate-700">
+                              {item.name}
+                            </h3>
+                            {item.estimate && (
+                              <p
+                                className={`text-sm font-medium ${
+                                  item.iconTextClass
+                                    ? item.iconTextClass.replace(
+                                        "text-",
+                                        "text-opacity-80 text-"
+                                      )
+                                    : "text-gray-500"
+                                }`}
+                              >
+                                {" "}
+                                {/* Warna estimasi mengikuti warna ikon dengan opacity */}
+                                {item.estimate}
+                              </p>
+                            )}
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </FadeInWhenVisible>
                   ))}
                 </div>
               </div>
-            </section>{" "}
-          </div>
+            </FadeInWhenVisible>
+          </section>
 
           {/* Placeholder untuk section fasilitas publik umum lainnya */}
           <div className="text-center text-gray-400 italic my-10 py-10">
@@ -398,76 +462,88 @@ export default function FasilitasDanKawasanPage() {
             >
               {" "}
               {/* Dihilangkan background putih agar menyatu dengan layout utama jika diinginkan, atau tambahkan bg-white rounded-xl shadow-lg jika ingin terpisah */}
-              <div className="container mx-auto px-4">
-                <div className="text-center mb-10 md:mb-12">
-                  <FontAwesomeIcon
-                    icon={faUsers}
-                    className="text-5xl md:text-7xl text-sky-600 mb-3"
-                  />
-                  <h2 className="text-2xl md:text-3xl font-bold text-slate-800">
-                    Fasilitas Pendukung Keseharian
-                  </h2>
-                  <p className="text-md text-gray-600 max-w-xl mx-auto mt-2">
-                    Berbagai sarana pendidikan, kesehatan, dan perbelanjaan
-                    untuk melengkapi kebutuhan harian keluarga Anda.
-                  </p>
-                </div>
+              <FadeInWhenVisible delay={0.5}>
+                <div className="container mx-auto px-4">
+                  <div className="text-center mb-10 md:mb-12">
+                    <FontAwesomeIcon
+                      icon={faUsers}
+                      className="text-5xl md:text-7xl text-sky-600 mb-3"
+                    />
+                    <h2 className="text-2xl md:text-3xl font-bold text-slate-800">
+                      Fasilitas Pendukung Keseharian
+                    </h2>
+                    <p className="text-md text-gray-600 max-w-xl mx-auto mt-2">
+                      Berbagai sarana pendidikan, kesehatan, dan perbelanjaan
+                      untuk melengkapi kebutuhan harian keluarga Anda.
+                    </p>
+                  </div>
 
-                <div className="space-y-12">
-                  {publicFacilitiesData.map((categoryBlock) => (
-                    <div key={categoryBlock.id}>
-                      {/* Judul Kategori dengan Ikon */}
-                      <div className="flex items-center mb-6">
-                        <div
-                          className={`flex-shrink-0 w-10 h-10 rounded-lg ${
-                            categoryBlock.categoryIconColor
-                              ? categoryBlock.categoryIconColor.replace(
-                                  "text-",
-                                  "bg-"
-                                ) + "/10"
-                              : "bg-slate-100"
-                          } ${
-                            categoryBlock.categoryIconColor || "text-slate-600"
-                          } flex items-center justify-center mr-3`}
-                        >
-                          <FontAwesomeIcon
-                            icon={categoryBlock.categoryIcon}
-                            className="w-5 h-5"
-                          />
-                        </div>
-                        <h3 className="text-xl md:text-2xl font-semibold text-slate-700">
-                          {categoryBlock.category}
-                        </h3>
-                      </div>
-
-                      {/* Daftar Item Fasilitas per Kategori */}
-                      {categoryBlock.items && categoryBlock.items.length > 0 ? (
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                          {categoryBlock.items.map((item, itemIndex) => (
+                  <div className="space-y-12">
+                    {publicFacilitiesData.map((categoryBlock, index) => (
+                      <FadeInWhenVisible
+                        key={categoryBlock.id}
+                        delay={index * 0.2}
+                      >
+                        <div>
+                          {/* Judul Kategori dengan Ikon */}
+                          <div className="flex items-center mb-6">
                             <div
-                              key={itemIndex}
-                              className="bg-white p-4 rounded-lg border border-slate-200 hover:shadow-md transition-shadow duration-300"
+                              className={`flex-shrink-0 w-10 h-10 rounded-lg ${
+                                categoryBlock.categoryIconColor
+                                  ? categoryBlock.categoryIconColor.replace(
+                                      "text-",
+                                      "bg-"
+                                    ) + "/10"
+                                  : "bg-slate-100"
+                              } ${
+                                categoryBlock.categoryIconColor ||
+                                "text-slate-600"
+                              } flex items-center justify-center mr-3`}
                             >
-                              <p className="font-semibold text-slate-800 text-sm md:text-base">
-                                {item.name}
-                              </p>
-                              {item.estimate && (
-                                <p className="text-gray-500 text-xs md:text-sm mt-1">
-                                  Estimasi: {item.estimate}
-                                </p>
-                              )}
+                              <FontAwesomeIcon
+                                icon={categoryBlock.categoryIcon}
+                                className="w-5 h-5"
+                              />
                             </div>
-                          ))}
+                            <h3 className="text-xl md:text-2xl font-semibold text-slate-700">
+                              {categoryBlock.category}
+                            </h3>
+                          </div>
+
+                          {/* Daftar Item Fasilitas per Kategori */}
+                          {categoryBlock.items &&
+                          categoryBlock.items.length > 0 ? (
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                              {categoryBlock.items.map((item, itemIndex) => (
+                                <FadeInWhenVisible
+                                  key={itemIndex}
+                                  delay={itemIndex * 0.2}
+                                >
+                                  <div className="bg-white p-4 rounded-lg border border-slate-200 hover:shadow-md transition-shadow duration-300">
+                                    <p className="font-semibold text-slate-800 text-sm md:text-base">
+                                      {item.name}
+                                    </p>
+                                    {item.estimate && (
+                                      <p className="text-gray-500 text-xs md:text-sm mt-1">
+                                        Estimasi: {item.estimate}
+                                      </p>
+                                    )}
+                                  </div>
+                                </FadeInWhenVisible>
+                              ))}
+                            </div>
+                          ) : (
+                            <p className="text-sm text-gray-500 pl-12">
+                              Informasi untuk kategori ini akan segera
+                              diperbarui.
+                            </p>
+                          )}
                         </div>
-                      ) : (
-                        <p className="text-sm text-gray-500 pl-12">
-                          Informasi untuk kategori ini akan segera diperbarui.
-                        </p>
-                      )}
-                    </div>
-                  ))}
+                      </FadeInWhenVisible>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </FadeInWhenVisible>
             </section>
             {/* Placeholder untuk section berikutnya */}
             <div className="text-center text-gray-400 italic my-10">

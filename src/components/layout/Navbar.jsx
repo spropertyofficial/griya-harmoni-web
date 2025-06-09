@@ -33,9 +33,8 @@ export default function Navbar() {
           <Image
             src="/logo.png"
             alt="Logo"
-            width={100}
-            height={100}
-            className="w-auto h-auto"
+            width={80}
+            height={80}
             priority
             quality={100}
           />

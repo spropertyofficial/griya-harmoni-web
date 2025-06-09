@@ -14,6 +14,8 @@ import {
   faCar,
 } from "@fortawesome/free-solid-svg-icons";
 import { getProperty } from "@/data/mockProperties";
+import FadeInWhenVisible from "@/components/common/FadeInWhenVisible";
+import { motion } from "framer-motion";
 
 export default function HomePage() {
   const unit = getProperty();
@@ -42,20 +44,48 @@ export default function HomePage() {
                      bg-white/10 backdrop-blur-lg rounded-xl 
                      border border-white/20 shadow-2xl"
         >
-          <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 sm:mb-6 leading-tight">
-              Rumah Subsidi Berkualitas {""}
+          <motion.div // Bungkus konten teks dengan motion.div
+            className="text-center"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              visible: { transition: { staggerChildren: 0.2 } }, // Jeda antar anak
+              hidden: {},
+            }}
+          >
+            <motion.h1 // Animasikan H1
+              className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 sm:mb-6 leading-tight"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.6, ease: "easeOut" },
+                },
+              }}
+            >
+              Rumah Subsidi Berkualitas{" "}
               <span className="block text-yellow-300 md:inline mt-1 md:mt-0">
                 Griya Harmoni Cibugel
               </span>
-            </h1>
-            <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-10 max-w-3xl mx-auto text-gray-50">
-              {" "}
-              {/* Warna teks disesuaikan agar kontras di atas overlay gelap */}
+            </motion.h1>
+
+            <motion.p // Animasikan paragraf dengan sedikit delay
+              className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-10 max-w-3xl mx-auto text-gray-50"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.6, ease: "easeOut" },
+                },
+              }}
+            >
               Wujudkan impian memiliki hunian idaman yang terjangkau. Desain
-              modern, lingkungan nyaman untuk keluarga Anda.
-            </p>
-          </div>
+              modern, lingkungan nyaman, dan kualitas terjamin untuk keluarga
+              Anda.
+            </motion.p>
+          </motion.div>
         </div>
       </section>
 
@@ -65,42 +95,48 @@ export default function HomePage() {
             Mengapa Memilih Griya Harmoni?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-              <div className="text-blue-600 mb-4 inline-block">
-                <FontAwesomeIcon icon={faBuilding} className="text-5xl" />
+            <FadeInWhenVisible delay={0.4}>
+              <div className="p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                <div className="text-blue-600 mb-4 inline-block">
+                  <FontAwesomeIcon icon={faBuilding} className="text-5xl" />
+                </div>
+                <h3 className="text-xl font-semibold text-slate-700 mb-2">
+                  Lokasi Strategis
+                </h3>
+                <p className="text-gray-600">
+                  Lokasi strategis dekat dengan pusat kota, pasar tradisional,
+                  dan akses transportasi umum yang mudah dijangkau.
+                </p>
               </div>
-              <h3 className="text-xl font-semibold text-slate-700 mb-2">
-                Lokasi Strategis
-              </h3>
-              <p className="text-gray-600">
-                Lokasi strategis dekat dengan pusat kota, pasar tradisional, dan
-                akses transportasi umum yang mudah dijangkau.
-              </p>
-            </div>
-            <div className="p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-              <div className="text-blue-600 mb-4 inline-block">
-                <FontAwesomeIcon icon={faPenNib} className="text-5xl" />
+            </FadeInWhenVisible>
+            <FadeInWhenVisible delay={0.8}>
+              <div className="p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                <div className="text-blue-600 mb-4 inline-block">
+                  <FontAwesomeIcon icon={faPenNib} className="text-5xl" />
+                </div>
+                <h3 className="text-xl font-semibold text-slate-700 mb-2">
+                  Desain Modern
+                </h3>
+                <p className="text-gray-600">
+                  Rumah dengan desain arsitektur modern minimalis yang
+                  fungsional dan estetik.
+                </p>
               </div>
-              <h3 className="text-xl font-semibold text-slate-700 mb-2">
-                Desain Modern
-              </h3>
-              <p className="text-gray-600">
-                Rumah dengan desain arsitektur modern minimalis yang fungsional
-                dan estetik.
-              </p>
-            </div>
-            <div className="p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-              <div className="text-blue-600 mb-4 inline-block">
-                <FontAwesomeIcon icon={faHouse} className="text-5xl" />
+            </FadeInWhenVisible>
+            <FadeInWhenVisible delay={1}>
+              <div className="p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                <div className="text-blue-600 mb-4 inline-block">
+                  <FontAwesomeIcon icon={faHouse} className="text-5xl" />
+                </div>
+                <h3 className="text-xl font-semibold text-slate-700 mb-2">
+                  Fasilitas Lengkap
+                </h3>
+                <p className="text-gray-600">
+                  Dilengkapi berbagai fasilitas pendukung untuk kenyamanan dan
+                  gaya hidup Anda.
+                </p>
               </div>
-              <h3 className="text-xl font-semibold text-slate-700 mb-2">
-                Fasilitas Lengkap
-              </h3>
-              <p className="text-gray-600">
-                Dilengkapi berbagai fasilitas pendukung untuk kenyamanan dan
-                gaya hidup Anda.
-              </p>
-            </div>
+            </FadeInWhenVisible>
           </div>
         </div>
       </section>
@@ -195,13 +231,28 @@ export default function HomePage() {
 
                 <div className="mt-auto text-center md:text-left">
                   {" "}
-                  {/* Mendorong tombol ke bawah jika ada space */}
-                  <Link
-                    href="/tipe-rumah" // Ini mengarah ke halaman detail unit tunggal
-                    className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg text-md sm:text-lg shadow-md hover:shadow-lg w-full md:w-fit transition-all duration-300 transform hover:scale-105"
+                  <motion.div
+                    whileHover={{
+                      scale: 1.03,
+                      transition: { duration: 0.2 },
+                    }}
+                    whileTap={{
+                      scale: 0.97,
+                      transition: { duration: 0.1 },
+                    }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 20,
+                    }}
                   >
-                    Lihat Detail Unit
-                  </Link>
+                    <Link
+                      href="/tipe-rumah"
+                      className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg text-md sm:text-lg shadow-md hover:shadow-lg w-full md:w-fit transition-all duration-300 transform hover:scale-105"
+                    >
+                      Lihat Detail Unit
+                    </Link>
+                  </motion.div>
                 </div>
               </div>
             </div>
