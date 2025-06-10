@@ -61,15 +61,6 @@ export default function SinglePropertyDetailPage() {
       {" "}
       {/* Latar halaman sedikit berbeda */}
       <div className="container mx-auto px-4 pb-12 md:pb-16">
-        <div className="mb-6 md:mb-8">
-          <Link
-            href="/"
-            className="text-sm text-blue-600 hover:text-blue-800 transition-colors inline-flex items-center"
-          >
-            <FontAwesomeIcon icon={faChevronLeft} className="w-3 h-3 mr-2" />
-            Kembali ke Beranda
-          </Link>
-        </div>
 
         <article>
           {/* Header Utama Halaman - Nama Properti, Lokasi, Status */}
@@ -274,7 +265,7 @@ export default function SinglePropertyDetailPage() {
                 </div>
               </div>
               {/* Kartu Form Kontak Agen */}
-              <div className="bg-white p-6 rounded-xl shadow-xl sticky top-20 mt-10">
+              <div className="bg-white p-6 rounded-xl shadow-xl sticky top-36 mt-6">
                 <ContactAgentForm
                   propertyName={property.name}
                   formTitle={`Tertarik Unit Ini?`} // Judul ini bisa diubah jika mau
